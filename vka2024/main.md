@@ -6,7 +6,7 @@ Writeups for <VKACTF 2024> CTF: [https://vkactf.ru/](<https://vkactf.ru/>)
 
 - Reverse Engineering/Malware
    - [medium] [santa-maria carousel](https://github.com/legoushka/ctf-writeups/blob/main/vka2024/carousel/writeup.md)
-   - [medium] [rustic's](<link_to_writeup>)
+   - [medium] [rustic's](https://github.com/legoushka/ctf-writeups/blob/main/vka2024/rustics/writeup.md)
 
 - Pwn/Binary Exploitation
    - [easy] [robbery of uncle sam](<link_to_writeup>)
