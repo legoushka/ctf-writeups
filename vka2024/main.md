@@ -9,4 +9,4 @@ Writeups for <VKACTF 2024> CTF: [https://vkactf.ru/](<https://vkactf.ru/>)
    - [medium] [rustic's](https://github.com/legoushka/ctf-writeups/blob/main/vka2024/rustics/writeup.md)
 
 - Pwn/Binary Exploitation
-   - [easy] [robbery of uncle sam](<link_to_writeup>)
+   - [easy] [robbery of uncle sam](https://github.com/legoushka/ctf-writeups/blob/main/vka2024/uncle-sam/writeup.md)
