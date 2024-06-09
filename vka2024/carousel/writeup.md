@@ -32,7 +32,7 @@
 
 <img src="https://github.com/legoushka/ctf-writeups/assets/96149010/88bec929-a221-410f-8946-38ddf9940119" alt="screen" width="500"/>
 
-9. Расшифровываем криптограмму и успешно получаем флаг.
+9. Расшифровываем криптограмму и успешно получаем флаг. Итоговый код можно посмотреть здесь: [solve.cs](https://github.com/legoushka/ctf-writeups/blob/main/vka2024/carousel/solve.cs)
 <img src="https://github.com/legoushka/ctf-writeups/assets/96149010/c2320f04-be09-4a4e-b24d-9a9ed7c9dd72" alt="screen" width="500"/>
 
 
