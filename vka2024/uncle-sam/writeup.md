@@ -1,6 +1,6 @@
 # Robbyry Of Uncle Sam #
 
-Предоставленные файлы:
+Предоставленные [файлы](https://github.com/Red-Cadets/VKACTF-2024/tree/main/categories/pwn/pwn-1e-Robbery-of-Uncle-Sam/give):
 
 <img src="https://github.com/legoushka/ctf-writeups/assets/96149010/4224eb5b-7f2f-43dd-94f3-021cc465bd92" alt="screen" width="200"/>
 
@@ -48,7 +48,7 @@
 
 10. Дополним эксплойт финальным этапом, которы воспользуется гаджетом для получения шелла.
 
-<img src="https://github.com/legoushka/ctf-writeups/assets/96149010/54b900e6-c3f6-4f68-b501-63bded42378a" alt="screen" width="1000"/>
+<img src="https://github.com/legoushka/ctf-writeups/assets/96149010/54b900e6-c3f6-4f68-b501-63bded42378a" alt="screen" width="500"/>
 
 11. Запускаем и успешно получаем шелл. Итоговая версия эксплойта может быть найдена тут: [solve.py](https://github.com/legoushka/ctf-writeups/blob/main/vka2024/uncle-sam/solve.py)
 
