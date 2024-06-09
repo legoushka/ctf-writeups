@@ -1,6 +1,7 @@
-# <VKACTF 2024>
+# VKACTF 2024 #
 
-Writeups for <VKACTF 2024> CTF: [https://vkactf.ru/](<https://vkactf.ru/>)
+Writeups for VKACTF 2024 CTF: [https://vkactf.ru/](<https://vkactf.ru/>)
+
 Файлы заданий и райтапы от авторов: [https://github.com/Red-Cadets/VKACTF-2024](https://github.com/Red-Cadets/VKACTF-2024)
 ## Categories
 
